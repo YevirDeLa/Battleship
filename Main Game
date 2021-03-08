@@ -1,0 +1,73 @@
+def printBoard():
+    r = 0
+    print ("  0 1 2 3 4 5 6 7 8 9")
+    for row in BShip:
+        print(r, end = " ")
+        r += 1
+        for elem in row:
+            print(elem, end = " ")
+        print()
+
+Ships = ["Carrier","Battle","Cruiser","Sub","Destroyer"]
+
+BShip = [
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"]
+         ]
+
+print("Battle Ship")
+printBoard()
+
+game = True
+
+while(game):
+    print("What ship would you like to place?")
+    print(Ships)
+    Place = input()
+
+    if Place == "Carrier":
+        for i in range(5):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "C"
+            printBoard()
+        Ships.remove(Place)
+    elif Place == "Battle":
+        for i in range(4):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "B"
+            printBoard()
+        Ships.remove(Place)
+    elif Place == "Cruiser":
+        for i in range(3):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "R"
+            printBoard()
+        Ships.remove(Place)
+    elif Place == "Sub":
+        for i in range(3):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "S"
+            printBoard()
+        Ships.remove(Place)
+    elif Place == "Destroyer":
+        for i in range(2):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "D"
+            printBoard()
+        Ships.remove(Place)
+    amount = len(Ships)
+    if amount == 0:
+        game = False

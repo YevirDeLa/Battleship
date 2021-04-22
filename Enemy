@@ -1,0 +1,383 @@
+import random
+def printBoard():
+    r = 0
+    print ("  0 1 2 3 4 5 6 7 8 9")
+    for row in BShip:
+        print(r, end = " ")
+        r += 1
+        for elem in row:
+            print(elem, end = " ")
+        print()
+
+def printBoardE():
+    r = 0
+    print ("  0 1 2 3 4 5 6 7 8 9")
+    for row in EShip:
+        print(r, end = " ")
+        r += 1
+        for elem in row:
+            print(elem, end = " ")
+        print()
+
+def checkAvail():
+    check = True
+    checking = True
+    direction = random.randint(0,1)
+    GoodC = 0  
+    while(check):
+        if Place == "Carrier":
+            if direction == 0:
+                r = random.randint(0,9)
+                c = random.randint(0,5)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(4):
+                            Cc += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 4:
+                            EShip[r][c] = "C"
+                            for i in range(4):
+                                c += 1
+                                EShip[r][c] = "C"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                else:
+                    pass
+            if direction == 1:
+                r = random.randint(0,5)
+                c = random.randint(0,9)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(4):
+                            Cr += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 4:
+                            EShip[r][c] = "C"
+                            for i in range(4):
+                                r += 1
+                                EShip[r][c] = "C"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                            
+                else:
+                    pass
+        elif Place == "Battle":
+            if direction == 0:
+                r = random.randint(0,9)
+                c = random.randint(0,6)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(3):
+                            Cc += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 3:
+                            EShip[r][c] = "B"
+                            for i in range(3):
+                                c += 1
+                                EShip[r][c] = "B"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                else:
+                    pass
+            if direction == 1:
+                r = random.randint(0,6)
+                c = random.randint(0,9)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(3):
+                            Cr += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 3:
+                            EShip[r][c] = "B"
+                            for i in range(3):
+                                r += 1
+                                EShip[r][c] = "B"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                            
+                else:
+                    pass
+        elif Place == "Cruiser":
+            if direction == 0:
+                r = random.randint(0,9)
+                c = random.randint(0,7)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(2):
+                            Cc += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 2:
+                            EShip[r][c] = "R"
+                            for i in range(2):
+                                c += 1
+                                EShip[r][c] = "R"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                else:
+                    pass
+            if direction == 1:
+                r = random.randint(0,7)
+                c = random.randint(0,9)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(2):
+                            Cr += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 2:
+                            EShip[r][c] = "R"
+                            for i in range(2):
+                                r += 1
+                                EShip[r][c] = "R"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                            
+                else:
+                    pass
+        elif Place == "Sub":
+            if direction == 0:
+                r = random.randint(0,9)
+                c = random.randint(0,7)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(2):
+                            Cc += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 2:
+                            EShip[r][c] = "S"
+                            for i in range(2):
+                                c += 1
+                                EShip[r][c] = "S"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                else:
+                    pass
+            if direction == 1:
+                r = random.randint(0,7)
+                c = random.randint(0,9)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(2):
+                            Cr += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 2:
+                            EShip[r][c] = "S"
+                            for i in range(2):
+                                r += 1
+                                EShip[r][c] = "S"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                            
+                else:
+                    pass
+        elif Place == "Destroyer":
+            if direction == 0:
+                r = random.randint(0,9)
+                c = random.randint(0,8)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(1):
+                            Cc += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 1:
+                            EShip[r][c] = "D"
+                            for i in range(1):
+                                c += 1
+                                EShip[r][c] = "D"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                else:
+                    pass
+            if direction == 1:
+                r = random.randint(0,8)
+                c = random.randint(0,9)
+                Cr = r
+                Cc = c
+                if EShip[Cr][Cc] == "*":
+                    while(checking):
+                        for i in range(1):
+                            Cr += 1
+                            if EShip[Cr][Cc] == "*":
+                                GoodC += 1
+                            else:
+                                checking = False
+                        if GoodC == 1:
+                            EShip[r][c] = "D"
+                            for i in range(1):
+                                r += 1
+                                EShip[r][c] = "D"
+                            GoodC = 0
+                            checking = False
+                            check = False
+                        else:
+                            pass
+                            
+                else:
+                    pass
+            
+                    
+GoodC = 0                
+checking = True
+All = 0
+
+Ships = ["Carrier","Battle","Cruiser","Sub","Destroyer"]
+ShipL = ["C","B","R","S","D"]
+
+BShip = [
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"]
+         ]
+
+EShip = [
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"],
+    ["*","*","*","*","*","*","*","*","*","*"]
+         ]
+
+print("Battle Ship")
+printBoard()
+
+print("Enemy Ship")
+printBoardE()
+
+game = True
+
+while(game):
+    print("What ship would you like to place?")
+    print(Ships)
+    Place = input()
+
+    if Place == "Carrier":
+        for i in range(5):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "C"
+            printBoard()
+        Ships.remove(Place)
+        checkAvail()
+        printBoardE()
+    elif Place == "Battle":
+        for i in range(4):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "B"
+            printBoard()
+        Ships.remove(Place)
+        checkAvail()
+        printBoardE()
+    elif Place == "Cruiser":
+        for i in range(3):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "R"
+            printBoard()
+        Ships.remove(Place)
+        checkAvail()
+        printBoardE()
+    elif Place == "Sub":
+        for i in range(3):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "S"
+            printBoard()
+        Ships.remove(Place)
+        checkAvail()
+        printBoardE()
+    elif Place == "Destroyer":
+        for i in range(2):
+            RowC = int(input("Choose a row >> "))
+            ColC = int(input("Choose a column >>"))
+            BShip[RowC][ColC] = "D"
+            printBoard()
+        Ships.remove(Place)
+        checkAvail()
+        printBoardE()
+    amount = len(Ships)
+    if amount == 0:
+        game = False
